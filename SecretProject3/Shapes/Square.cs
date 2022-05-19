@@ -64,7 +64,19 @@ namespace SecretProject3.Shapes
 
         public override void Move(Point mouseMovePoint, Point mouseDownPoint)
         {
-            throw new NotImplementedException();
+            int differenceX = mouseMovePoint.X - mouseDownPoint.X;
+            int differenceY = mouseMovePoint.Y - mouseDownPoint.Y;
+
+            //int tempX = this.Location.X;
+            //int tempY = this.Location.Y;
+
+            Point newPoint = new Point
+            {
+                X = this.Location.X + differenceX,
+                Y = this.Location.Y + differenceY
+            };
+
+            this.Location = newPoint;
         }
     }
 }

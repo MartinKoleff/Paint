@@ -95,12 +95,12 @@ namespace SecretProject3.Shapes
         public override void Move(Point mouseMovePoint, Point mouseDownPoint)
         {
             isMoving = true;
-            _points[0].X += mouseDownPoint.X - mouseMovePoint.X;
-            _points[0].Y += mouseDownPoint.Y - mouseMovePoint.Y;
-            _points[1].X += mouseDownPoint.X - mouseMovePoint.X;
-            _points[1].Y += mouseDownPoint.Y - mouseMovePoint.Y;
-            _points[2].X += mouseDownPoint.X - mouseMovePoint.X;
-            _points[2].Y += mouseDownPoint.Y - mouseMovePoint.Y;
+            _points[0].X += mouseMovePoint.X - mouseDownPoint.X;
+            _points[0].Y += mouseMovePoint.Y - mouseDownPoint.Y;
+            _points[1].X += mouseMovePoint.X - mouseDownPoint.X;
+            _points[1].Y += mouseMovePoint.Y - mouseDownPoint.Y;
+            _points[2].X += mouseMovePoint.X - mouseDownPoint.X;
+            _points[2].Y += mouseMovePoint.Y - mouseDownPoint.Y;
         }
     }
 }

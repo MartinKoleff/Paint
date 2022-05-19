@@ -46,11 +46,6 @@ namespace SecretProject3.Shapes
             //new function updateSize()!!!!! (for each shape)
             this.Width = Math.Abs(mouseDownPoint.X - mouseMovePoint.X);
             this.Height = Math.Abs(mouseDownPoint.Y - mouseMovePoint.Y);
-
-            //Debug.WriteLine("Mouse move -> " + mouseMovePoint.X + ", " + mouseMovePoint.Y);
-            //Debug.WriteLine("Mouse down -> " + mouseDownPoint.X + ", " + mouseDownPoint.Y);
-            //Debug.WriteLine("Coordinates -> " + this.Location.X + ", " + this.Location.Y);
-            //Debug.WriteLine(Width + ", " + Height);
         }
 
         public override void OpenEditor()
@@ -124,8 +119,8 @@ namespace SecretProject3.Shapes
         public override void Move(Point mouseMovePoint, Point mouseDownPoint)
         {
            
-            int differenceX = mouseDownPoint.X - mouseMovePoint.X;
-            int differenceY = mouseDownPoint.Y - mouseMovePoint.Y;
+            int differenceX = mouseMovePoint.X - mouseDownPoint.X;
+            int differenceY = mouseMovePoint.Y - mouseDownPoint.Y;
 
             //int tempX = this.Location.X;
             //int tempY = this.Location.Y;

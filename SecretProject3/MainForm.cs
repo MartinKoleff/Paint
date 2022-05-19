@@ -42,9 +42,19 @@ namespace SecretProject3
         {
             InitializeComponent();
 
-            typeof(PictureBox).InvokeMember("DoubleBuffered",
-                             BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic,
-                             null, this, new object[] { true });
+            foreach (Control control in panelMenu.Controls)
+            {
+                if (control is PictureBox)
+                {
+                    control.MouseHover += (o, e) => control.BackColor = Color.FromArgb(47, 49, 54);
+                    control.MouseEnter += (o, e) => control.BackColor = Color.FromArgb(47, 49, 54);
+                    control.MouseLeave += (o, e) => control.BackColor = Color.Transparent;
+                }
+            }
+            buttonCustomColor.BackColor = this.BackColor;
+            SetStyle(ControlStyles.UserPaint |
+                ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.OptimizedDoubleBuffer, true);
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -64,32 +74,48 @@ namespace SecretProject3
         }
 
         /**Choosing Shape Type*/
-        private void rectangleButton_Click(object sender, EventArgs e)
+
+        private void pictureBoxRectangle_Click(object sender, EventArgs e)
         {
             isBrush = false;
             isEraser = false;
             _selectedShape = new Shapes.Rectangle();
         }
 
-        private void squareButton_Click(object sender, EventArgs e)
+        private void pictureBoxSquare_Click(object sender, EventArgs e)
         {
             isBrush = false;
             isEraser = false;
             _selectedShape = new Shapes.Square();
         }
-        private void circleButton_Click(object sender, EventArgs e)
+
+        private void pictureBoxTriangle_Click(object sender, EventArgs e)
+        {
+            isBrush = false;
+            isEraser = false;
+            _selectedShape = new Shapes.Triangle();
+        }
+
+        private void pictureBoxCircle_Click(object sender, EventArgs e)
         {
             isBrush = false;
             isEraser = false;
             _selectedShape = new Shapes.Circle();
         }
 
-        private void triangleButton_Click(object sender, EventArgs e)
+        private void pictureBoxEraser_Click(object sender, EventArgs e)
         {
             isBrush = false;
-            isEraser = false;
-            _selectedShape = new Shapes.Triangle();
+            isEraser = true;
+            _selectedShape = null;
         }
+
+        private void pictureBoxLine_Click(object sender, EventArgs e)
+        {
+            isBrush = true;
+            _selectedShape = null;
+        }
+
 
         private void MainForm_MouseUp(object sender, MouseEventArgs e)
         {
@@ -227,18 +253,6 @@ namespace SecretProject3
             toDelete = true;
             Invalidate();
         }
-        private void brushButton_Click(object sender, EventArgs e)
-        {
-            isBrush = true;
-            _selectedShape = null;
-        }
-        private void eraserButton_Click(object sender, EventArgs e)
-        {
-            isBrush = false;
-            isEraser = true;
-            _selectedShape = null;
-        }
-
         /**Delete all shapes / Clear window*/
         private void buttonReset_Click(object sender, EventArgs e)
         {
@@ -286,15 +300,53 @@ namespace SecretProject3
             using (var fs = new FileStream("data", FileMode.Open))
                 _shapes = (List<Shape>)formatter.Deserialize(fs);
         }
-
-        private void FormScene_FormClosing(object sender, FormClosingEventArgs e)
+        private void buttonCustomColor_Click(object sender, EventArgs e)
         {
-            IFormatter formatter = new BinaryFormatter();
+            ColorDialog dlg = new ColorDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                buttonCustomColor.BackColor = dlg.Color;
+                this.BackColor = dlg.Color;
+            }
+        }
+        //TO DO: Figure out wtf is this 
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //IFormatter formatter = new BinaryFormatter();
 
-            using (var fs = new FileStream("data", FileMode.Create))
-                formatter.Serialize(fs, _shapes);
+            //using (var fs = new FileStream("data", FileMode.Create))
+            //    formatter.Serialize(fs, _shapes);
         }
 
+        private void pictureBoxRectangle_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, pictureBoxRectangle.ClientRectangle, Color.FromArgb(109, 213, 250), ButtonBorderStyle.Solid);
+        }
+
+        private void pictureBoxSquare_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, pictureBoxRectangle.ClientRectangle, Color.FromArgb(255, 192, 72), ButtonBorderStyle.Solid);
+        }
+
+        private void pictureBoxTriangle_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, pictureBoxRectangle.ClientRectangle, Color.FromArgb(0, 228, 153), ButtonBorderStyle.Solid);
+        }
+
+        private void pictureBoxCircle_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, pictureBoxRectangle.ClientRectangle, Color.FromArgb(224, 35, 13), ButtonBorderStyle.Solid);
+        }
+
+        private void pictureBoxEraser_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, pictureBoxRectangle.ClientRectangle, Color.FromArgb(30, 129, 206), ButtonBorderStyle.Solid);
+        }
+
+        private void pictureBoxLine_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, pictureBoxRectangle.ClientRectangle, Color.FromArgb(255, 118, 183), ButtonBorderStyle.Solid);
+        }
     }
 }
 
