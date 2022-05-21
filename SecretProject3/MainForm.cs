@@ -20,7 +20,7 @@ namespace VectorGraphicEditor
 
         private Point _mouseDownLocation;
         private Shape _selectedShape;
-        private Shapes.Rectangle _selectionRectangle;
+        private Shapes.Rectangle _selectionRectangle = new Shapes.Rectangle();
         public MainForm()
         {
             InitializeComponent();
@@ -34,6 +34,7 @@ namespace VectorGraphicEditor
                     control.MouseLeave += (o, e) => control.BackColor = Color.Transparent;
                 }
             }
+            panelMenu.BackColor = Color.FromArgb(32, 34, 37);
             buttonCustomColor.BackColor = this.BackColor;
             SetStyle(ControlStyles.UserPaint |
                 ControlStyles.AllPaintingInWmPaint |
@@ -102,13 +103,15 @@ namespace VectorGraphicEditor
 
         private void MainForm_MouseUp(object sender, MouseEventArgs e)
         {
-            if (_mouseDownLocation == null || isBrush || isEraser)
-                return;
-
             if (e.Button == MouseButtons.Right)
             {
                 _selectionRectangle = null;
+                Invalidate();
             }
+
+            if (_mouseDownLocation == null || isBrush || isEraser)
+                return;
+
             else if (e.Button == MouseButtons.Left)
             {
                 //Add Shape to List
@@ -176,10 +179,10 @@ namespace VectorGraphicEditor
         /**First time clicking*/
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
+            _mouseDownLocation = e.Location;
             if (e.Button != MouseButtons.Left && e.Button != MouseButtons.Right && e.Button != MouseButtons.Middle || isBrush || isEraser)
                 return;
 
-            _mouseDownLocation = e.Location;
             if (e.Button == MouseButtons.Middle)
             {
                 if (_shapes.Where(shape => shape.Selected).Count() == 1) //If only one shape is selected -> then you can move it

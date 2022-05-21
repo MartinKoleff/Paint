@@ -136,7 +136,7 @@
             // pictureBoxRectangle
             // 
             this.pictureBoxRectangle.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxRectangle.Image = global::VectorGraphicEditor.Properties.Resources.rectangle85;
+            this.pictureBoxRectangle.Image = global::SecretProject3.Properties.Resources.rectangle85;
             this.pictureBoxRectangle.Location = new System.Drawing.Point(601, 10);
             this.pictureBoxRectangle.Name = "pictureBoxRectangle";
             this.pictureBoxRectangle.Size = new System.Drawing.Size(85, 85);
@@ -148,7 +148,7 @@
             // pictureBoxSquare
             // 
             this.pictureBoxSquare.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxSquare.Image = global::VectorGraphicEditor.Properties.Resources.square85;
+            this.pictureBoxSquare.Image = global::SecretProject3.Properties.Resources.square85;
             this.pictureBoxSquare.Location = new System.Drawing.Point(692, 10);
             this.pictureBoxSquare.Name = "pictureBoxSquare";
             this.pictureBoxSquare.Size = new System.Drawing.Size(85, 85);
@@ -160,7 +160,7 @@
             // pictureBoxCircle
             // 
             this.pictureBoxCircle.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxCircle.Image = global::VectorGraphicEditor.Properties.Resources.circle85;
+            this.pictureBoxCircle.Image = global::SecretProject3.Properties.Resources.circle85;
             this.pictureBoxCircle.Location = new System.Drawing.Point(874, 10);
             this.pictureBoxCircle.Name = "pictureBoxCircle";
             this.pictureBoxCircle.Size = new System.Drawing.Size(85, 85);
@@ -172,7 +172,7 @@
             // pictureBoxEraser
             // 
             this.pictureBoxEraser.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxEraser.Image = global::VectorGraphicEditor.Properties.Resources.eraser85;
+            this.pictureBoxEraser.Image = global::SecretProject3.Properties.Resources.eraser85;
             this.pictureBoxEraser.Location = new System.Drawing.Point(965, 10);
             this.pictureBoxEraser.Name = "pictureBoxEraser";
             this.pictureBoxEraser.Size = new System.Drawing.Size(85, 85);
@@ -184,7 +184,7 @@
             // pictureBoxLine
             // 
             this.pictureBoxLine.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxLine.Image = global::VectorGraphicEditor.Properties.Resources.line85;
+            this.pictureBoxLine.Image = global::SecretProject3.Properties.Resources.line85;
             this.pictureBoxLine.Location = new System.Drawing.Point(1056, 10);
             this.pictureBoxLine.Name = "pictureBoxLine";
             this.pictureBoxLine.Size = new System.Drawing.Size(85, 85);
@@ -196,7 +196,7 @@
             // pictureBoxTriangle
             // 
             this.pictureBoxTriangle.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTriangle.Image = global::VectorGraphicEditor.Properties.Resources.triangle85;
+            this.pictureBoxTriangle.Image = global::SecretProject3.Properties.Resources.triangle85;
             this.pictureBoxTriangle.Location = new System.Drawing.Point(783, 10);
             this.pictureBoxTriangle.Name = "pictureBoxTriangle";
             this.pictureBoxTriangle.Size = new System.Drawing.Size(85, 85);
