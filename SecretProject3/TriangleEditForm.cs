@@ -40,7 +40,9 @@ namespace VectorGraphicEditor
             {
                 Triangle.Width = int.Parse(textBoxWidth.Text);
                 Triangle.Height = int.Parse(textBoxHeight.Text);
-                Triangle.Color = buttonColor.BackColor; //TO TEST...
+                Triangle.ColorFill = buttonColor.BackColor; //TO TEST...
+                Triangle.Color = buttonColor.BackColor;
+                Triangle.ColorBorder = buttonColor.BackColor;
             }
             catch
             {
