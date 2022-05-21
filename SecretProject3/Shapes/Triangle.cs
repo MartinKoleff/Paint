@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SecretProject3.Shapes
 {
+    [Serializable]
     public class Triangle : Shape
     {
         public bool isCustom = false;

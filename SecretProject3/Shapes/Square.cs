@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace SecretProject3.Shapes
 {
+    [Serializable]
     public class Square : Shape
     {
         public override int Area

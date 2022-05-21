@@ -291,7 +291,7 @@ namespace SecretProject3
         }
 
         /**Serialization*/
-        private void FormScene_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             if (!File.Exists("data"))
                 return;
@@ -312,10 +312,10 @@ namespace SecretProject3
         //TO DO: Figure out wtf is this 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //IFormatter formatter = new BinaryFormatter();
+            IFormatter formatter = new BinaryFormatter();
 
-            //using (var fs = new FileStream("data", FileMode.Create))
-            //    formatter.Serialize(fs, _shapes);
+            using (var fs = new FileStream("data", FileMode.Create))
+                formatter.Serialize(fs, _shapes);
         }
 
         private void pictureBoxRectangle_Paint(object sender, PaintEventArgs e)

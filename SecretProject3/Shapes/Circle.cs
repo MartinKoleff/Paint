@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace SecretProject3.Shapes
 {
+    [Serializable]
     public class Circle : Shape
     {
         public float Radius { get; set; }
