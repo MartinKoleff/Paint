@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SecretProject3.Shapes
+namespace VectorGraphicEditor.Shapes
 {
     [Serializable]
     public class Rectangle : Shape

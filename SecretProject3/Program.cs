@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SecretProject3
+namespace VectorGraphicEditor
 {
     internal static class Program
     {

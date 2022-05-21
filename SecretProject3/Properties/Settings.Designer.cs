@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SecretProject3.Properties
+namespace VectorGraphicEditor.Properties
 {
 
 

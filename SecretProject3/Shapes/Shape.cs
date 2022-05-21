@@ -1,4 +1,4 @@
-﻿using SecretProject3.Exceptions;
+﻿using VectorGraphicEditor.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SecretProject3.Shapes
+namespace VectorGraphicEditor.Shapes
 {
     [Serializable]
     public abstract class Shape

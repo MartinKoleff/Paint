@@ -1,11 +1,11 @@
-﻿using SecretProject3.Shapes;
+﻿using VectorGraphicEditor.Shapes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SecretProject3.Exceptions
+namespace VectorGraphicEditor.Exceptions
 {
     public delegate bool WherePreidacte(Shape shape);
     static class RectangleExtensions

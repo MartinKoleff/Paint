@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SecretProject3.Exceptions
+namespace VectorGraphicEditor.Exceptions
 {
     internal class InvalidValueException : Exception
     {

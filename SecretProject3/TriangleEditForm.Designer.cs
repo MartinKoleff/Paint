@@ -1,4 +1,4 @@
-﻿namespace SecretProject3
+﻿namespace VectorGraphicEditor
 {
     partial class TriangleEditForm
     {

@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SecretProject3.Shapes;
+using VectorGraphicEditor.Shapes;
 
-namespace SecretProject3
+namespace VectorGraphicEditor
 {
     public partial class MainForm : Form 
     {
@@ -22,18 +17,6 @@ namespace SecretProject3
         private bool toDelete = false;
         private bool isBrush = false;
         private bool isEraser = false;
-
-        public static List<Shape> Shapes
-        {
-            get
-            {
-                return _shapes;
-            }
-             set
-            {
-                _shapes = value;
-            }
-        }
 
         private Point _mouseDownLocation;
         private Shape _selectedShape;
@@ -262,15 +245,6 @@ namespace SecretProject3
             toDelete = true;
             Invalidate();
         }
-        /**Select all shapes*/
-        private void SelectShapes()
-        {
-            foreach (Shape s in _shapes)
-                s.Selected = true;
-
-            Invalidate();
-        }
-
         /**Deselect all shapes*/
         private void DeselectShapes()
         {

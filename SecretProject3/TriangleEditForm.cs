@@ -1,4 +1,4 @@
-﻿using SecretProject3.Shapes;
+﻿using VectorGraphicEditor.Shapes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SecretProject3
+namespace VectorGraphicEditor
 {
     public partial class TriangleEditForm : Form
     {
