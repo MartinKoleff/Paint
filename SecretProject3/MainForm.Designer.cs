@@ -74,10 +74,10 @@
             // 
             // buttonReset
             // 
-            this.buttonReset.Location = new System.Drawing.Point(512, 44);
-            this.buttonReset.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonReset.Location = new System.Drawing.Point(683, 54);
+            this.buttonReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(74, 33);
+            this.buttonReset.Size = new System.Drawing.Size(99, 41);
             this.buttonReset.TabIndex = 8;
             this.buttonReset.Text = "RESET";
             this.buttonReset.UseVisualStyleBackColor = true;
@@ -85,10 +85,10 @@
             // 
             // deleteSelectedShapesButton
             // 
-            this.deleteSelectedShapesButton.Location = new System.Drawing.Point(419, 21);
-            this.deleteSelectedShapesButton.Margin = new System.Windows.Forms.Padding(2);
+            this.deleteSelectedShapesButton.Location = new System.Drawing.Point(559, 26);
+            this.deleteSelectedShapesButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deleteSelectedShapesButton.Name = "deleteSelectedShapesButton";
-            this.deleteSelectedShapesButton.Size = new System.Drawing.Size(74, 56);
+            this.deleteSelectedShapesButton.Size = new System.Drawing.Size(99, 69);
             this.deleteSelectedShapesButton.TabIndex = 9;
             this.deleteSelectedShapesButton.Text = "DELETE SELECTED SHAPES";
             this.deleteSelectedShapesButton.UseVisualStyleBackColor = true;
@@ -107,16 +107,18 @@
             this.panelMenu.Controls.Add(this.pictureBoxEraser);
             this.panelMenu.Controls.Add(this.pictureBoxLine);
             this.panelMenu.Controls.Add(this.pictureBoxTriangle);
-            this.panelMenu.Location = new System.Drawing.Point(-4, -4);
+            this.panelMenu.Location = new System.Drawing.Point(-5, -5);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(1168, 98);
+            this.panelMenu.Size = new System.Drawing.Size(1557, 121);
             this.panelMenu.TabIndex = 12;
             // 
             // buttonCustomColor
             // 
-            this.buttonCustomColor.Location = new System.Drawing.Point(224, 37);
+            this.buttonCustomColor.Location = new System.Drawing.Point(299, 46);
+            this.buttonCustomColor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCustomColor.Name = "buttonCustomColor";
-            this.buttonCustomColor.Size = new System.Drawing.Size(25, 25);
+            this.buttonCustomColor.Size = new System.Drawing.Size(33, 31);
             this.buttonCustomColor.TabIndex = 19;
             this.buttonCustomColor.UseVisualStyleBackColor = true;
             this.buttonCustomColor.Click += new System.EventHandler(this.buttonCustomColor_Click);
@@ -125,11 +127,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(255, 40);
+            this.label1.Location = new System.Drawing.Point(340, 49);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 18);
+            this.label1.Size = new System.Drawing.Size(159, 20);
             this.label1.TabIndex = 18;
             this.label1.Text = "Background Color";
             // 
@@ -137,9 +140,10 @@
             // 
             this.pictureBoxRectangle.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxRectangle.Image = global::SecretProject3.Properties.Resources.rectangle85;
-            this.pictureBoxRectangle.Location = new System.Drawing.Point(601, 10);
+            this.pictureBoxRectangle.Location = new System.Drawing.Point(801, 12);
+            this.pictureBoxRectangle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxRectangle.Name = "pictureBoxRectangle";
-            this.pictureBoxRectangle.Size = new System.Drawing.Size(85, 85);
+            this.pictureBoxRectangle.Size = new System.Drawing.Size(113, 105);
             this.pictureBoxRectangle.TabIndex = 16;
             this.pictureBoxRectangle.TabStop = false;
             this.pictureBoxRectangle.Click += new System.EventHandler(this.pictureBoxRectangle_Click);
@@ -149,9 +153,10 @@
             // 
             this.pictureBoxSquare.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxSquare.Image = global::SecretProject3.Properties.Resources.square85;
-            this.pictureBoxSquare.Location = new System.Drawing.Point(692, 10);
+            this.pictureBoxSquare.Location = new System.Drawing.Point(923, 12);
+            this.pictureBoxSquare.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxSquare.Name = "pictureBoxSquare";
-            this.pictureBoxSquare.Size = new System.Drawing.Size(85, 85);
+            this.pictureBoxSquare.Size = new System.Drawing.Size(113, 105);
             this.pictureBoxSquare.TabIndex = 15;
             this.pictureBoxSquare.TabStop = false;
             this.pictureBoxSquare.Click += new System.EventHandler(this.pictureBoxSquare_Click);
@@ -161,9 +166,10 @@
             // 
             this.pictureBoxCircle.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxCircle.Image = global::SecretProject3.Properties.Resources.circle85;
-            this.pictureBoxCircle.Location = new System.Drawing.Point(874, 10);
+            this.pictureBoxCircle.Location = new System.Drawing.Point(1165, 12);
+            this.pictureBoxCircle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxCircle.Name = "pictureBoxCircle";
-            this.pictureBoxCircle.Size = new System.Drawing.Size(85, 85);
+            this.pictureBoxCircle.Size = new System.Drawing.Size(113, 105);
             this.pictureBoxCircle.TabIndex = 14;
             this.pictureBoxCircle.TabStop = false;
             this.pictureBoxCircle.Click += new System.EventHandler(this.pictureBoxCircle_Click);
@@ -173,9 +179,10 @@
             // 
             this.pictureBoxEraser.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxEraser.Image = global::SecretProject3.Properties.Resources.eraser85;
-            this.pictureBoxEraser.Location = new System.Drawing.Point(965, 10);
+            this.pictureBoxEraser.Location = new System.Drawing.Point(1287, 12);
+            this.pictureBoxEraser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxEraser.Name = "pictureBoxEraser";
-            this.pictureBoxEraser.Size = new System.Drawing.Size(85, 85);
+            this.pictureBoxEraser.Size = new System.Drawing.Size(113, 105);
             this.pictureBoxEraser.TabIndex = 13;
             this.pictureBoxEraser.TabStop = false;
             this.pictureBoxEraser.Click += new System.EventHandler(this.pictureBoxEraser_Click);
@@ -185,9 +192,10 @@
             // 
             this.pictureBoxLine.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLine.Image = global::SecretProject3.Properties.Resources.line85;
-            this.pictureBoxLine.Location = new System.Drawing.Point(1056, 10);
+            this.pictureBoxLine.Location = new System.Drawing.Point(1408, 12);
+            this.pictureBoxLine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxLine.Name = "pictureBoxLine";
-            this.pictureBoxLine.Size = new System.Drawing.Size(85, 85);
+            this.pictureBoxLine.Size = new System.Drawing.Size(113, 105);
             this.pictureBoxLine.TabIndex = 12;
             this.pictureBoxLine.TabStop = false;
             this.pictureBoxLine.Click += new System.EventHandler(this.pictureBoxLine_Click);
@@ -197,9 +205,10 @@
             // 
             this.pictureBoxTriangle.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxTriangle.Image = global::SecretProject3.Properties.Resources.triangle85;
-            this.pictureBoxTriangle.Location = new System.Drawing.Point(783, 10);
+            this.pictureBoxTriangle.Location = new System.Drawing.Point(1044, 12);
+            this.pictureBoxTriangle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxTriangle.Name = "pictureBoxTriangle";
-            this.pictureBoxTriangle.Size = new System.Drawing.Size(85, 85);
+            this.pictureBoxTriangle.Size = new System.Drawing.Size(113, 105);
             this.pictureBoxTriangle.TabIndex = 11;
             this.pictureBoxTriangle.TabStop = false;
             this.pictureBoxTriangle.Click += new System.EventHandler(this.pictureBoxTriangle_Click);
@@ -207,11 +216,11 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 670);
+            this.ClientSize = new System.Drawing.Size(1541, 825);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Text = "Main Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

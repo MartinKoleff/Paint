@@ -45,12 +45,11 @@ namespace VectorGraphicEditor.Shapes
                 X = (int)(Location.X - Radius),
                 Y = (int)(Location.Y - Radius)
             };
-
             //Debug.WriteLine("Mouse move -> " + mouseMovePoint.X + ", " + mouseMovePoint.Y);
             //Debug.WriteLine("Mouse down -> " + mouseDownPoint.X + ", " + mouseDownPoint.Y);
             //Debug.WriteLine("Coordinates -> " + this.Location.X + ", " + this.Location.Y);
             //Debug.WriteLine(Radius);
-            //Debug.WriteLine("Center Point -> "+ _centerPoint.X + ", " + _centerPoint.Y);
+            //Debug.WriteLine("Center Point -> " + _centerPoint.X + ", " + _centerPoint.Y);
         }
 
         public override void OpenEditor()
@@ -69,42 +68,12 @@ namespace VectorGraphicEditor.Shapes
         {
             _centerPoint.X += mouseMovePoint.X - mouseDownPoint.X;
             _centerPoint.Y += mouseMovePoint.Y - mouseDownPoint.Y;
+
+            Location = new Point
+            {
+            X =  (int)(_centerPoint.X + Radius),
+            Y =  (int)(_centerPoint.Y + Radius)
+            };
         }
     }
 }
-//_centerPoint = new Point
-//{
-//    X = (int)(mouseDownPoint.X - Radius),
-//    Y = (int)(mouseDownPoint.Y - Radius)
-//};
-
-//return Location.X <= point.X && point.X <= Location.X + Radius &&  //TO FIX... (Works like square...)
-//Location.Y <= point.Y && point.Y <= Location.Y + Radius;
-
-//return (point.X - this.Location.X) ^ 2 + (point.Y - this.Location.Y) ^ 2 <= this.Radius ^ 2;
-
-
-//-----------------------------------------------------------------
-//float a = Math.Abs(mouseMovePoint.X - mouseDownPoint.X);
-//float b = Math.Abs(mouseMovePoint.Y - mouseDownPoint.Y);
-
-//float newRadius = (float)Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2)) / 2;
-
-////_centerPoint.X = (int)(Location.X - newRadius);
-////_centerPoint.Y = (int)(Location.Y - newRadius);
-//if (mouseMovePoint.X > mouseDownPoint.X)
-//{
-//    _centerPoint.X += (int) Math.Round(newRadius);
-//}
-//else
-//{
-//    _centerPoint.X -= (int)Math.Round(newRadius);
-//}
-//if (mouseMovePoint.Y > mouseDownPoint.Y)
-//{
-//    _centerPoint.Y += (int)Math.Round(newRadius);
-//}
-//else
-//{
-//    _centerPoint.Y -= (int)Math.Round(newRadius);
-//}

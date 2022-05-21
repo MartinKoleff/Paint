@@ -134,7 +134,6 @@ namespace VectorGraphicEditor
                     return;
                 }else if (isEraser)
                 {
-                    
                     using (var brush = new SolidBrush(Color.White)) //PICK COLOR...
                         CreateGraphics().FillEllipse(brush, e.X, e.Y, 5, 5); //EDIT BRUSH SIZE...
 
@@ -153,13 +152,14 @@ namespace VectorGraphicEditor
                     if (_selectionRectangle.ContainsInside(innerShape))
                     {
                         innerShape.Selected = true;
+                        _selectedShape = innerShape;
                     }
                     else
                     {
                         innerShape.Selected = false;
                     }
                 }
-                //Invalidate();
+                Invalidate();
             }
             else if (e.Button == MouseButtons.Middle)
             {
@@ -180,14 +180,14 @@ namespace VectorGraphicEditor
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
             _mouseDownLocation = e.Location;
-            if (e.Button != MouseButtons.Left && e.Button != MouseButtons.Right && e.Button != MouseButtons.Middle || isBrush || isEraser)
+            if (e.Button != MouseButtons.Left && e.Button != MouseButtons.Right && e.Button != MouseButtons.Middle)
                 return;
 
             if (e.Button == MouseButtons.Middle)
             {
                 if (_shapes.Where(shape => shape.Selected).Count() == 1) //If only one shape is selected -> then you can move it
                 {
-                    _selectedShape = _shapes.Where(shape => shape.Selected).First(); //InvalidCastException //.Cast<Shape>() //.Select(shape => (Shape) shape)
+                    _selectedShape = _shapes.Where(shape => shape.Selected).First();
                     return;
                 }
             }
@@ -203,14 +203,21 @@ namespace VectorGraphicEditor
                 _selectionRectangle.ColorFill = Color.Transparent;
                 _selectionRectangle.Location = _mouseDownLocation;
             }
+
             else if (e.Button == MouseButtons.Left)
             {
-                _selectedShape = (Shape)Activator.CreateInstance(_selectedShape.GetType());
-                //Debug.WriteLine(_selectedShape.GetType());
+                try //if brush / eraser
+                {
+                    _selectedShape = (Shape)Activator.CreateInstance(_selectedShape.GetType());
+                    //Debug.WriteLine(_selectedShape.GetType());
 
-                _selectedShape.ColorFill = Color.Blue; //EDIT COLOR HERE...
+                    _selectedShape.ColorFill = Color.Blue; //EDIT COLOR HERE...
 
-                _selectedShape.Location = _mouseDownLocation;
+                    _selectedShape.Location = _mouseDownLocation;
+                }catch (Exception ex)
+                {
+                    return;
+                }
             }
             Invalidate();
         }
@@ -235,17 +242,28 @@ namespace VectorGraphicEditor
                 .Where(shape => !shape.Selected)
                 .ToList();
 
-            _selectedShape = (Shape)Activator.CreateInstance(_selectedShape.GetType());
-            toDelete = true;
+            try
+            {
+                _selectedShape = (Shape)Activator.CreateInstance(_selectedShape.GetType());
+                toDelete = true;
+            }catch(Exception ex)
+            {
+
+            }
             Invalidate();
         }
         /**Delete all shapes / Clear window*/
         private void buttonReset_Click(object sender, EventArgs e)
         {
             _shapes.Clear();
+            try
+            {
+                _selectedShape = (Shape)Activator.CreateInstance(_selectedShape.GetType());
+                toDelete = true;
+            }catch (Exception ex)
+            {
 
-            _selectedShape = (Shape)Activator.CreateInstance(_selectedShape.GetType());
-            toDelete = true;
+            }
             Invalidate();
         }
         /**Deselect all shapes*/
@@ -327,3 +345,7 @@ namespace VectorGraphicEditor
     }
 }
 
+//if (isBrush || isEraser)
+//{
+//    return;
+//}
