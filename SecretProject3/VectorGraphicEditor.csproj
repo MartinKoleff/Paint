@@ -73,6 +73,12 @@
     <Compile Include="Shapes\Shape.cs" />
     <Compile Include="Shapes\Square.cs" />
     <Compile Include="Shapes\Triangle.cs" />
+    <Compile Include="SquareEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SquareEditForm.Designer.cs">
+      <DependentUpon>SquareEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TriangleCustomPointsEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </Compile>
     <EmbeddedResource Include="RectangleEditForm.resx">
       <DependentUpon>RectangleEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SquareEditForm.resx">
+      <DependentUpon>SquareEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TriangleCustomPointsEditForm.resx">
       <DependentUpon>TriangleCustomPointsEditForm.cs</DependentUpon>

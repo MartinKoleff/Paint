@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SecretProject3;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -52,12 +53,14 @@ namespace VectorGraphicEditor.Shapes
         }
         public override void OpenEditor()
         {
-            throw new NotImplementedException();
+            SquareEditForm squareEditForm = new SquareEditForm();
+            squareEditForm.Square = this;
+            squareEditForm.ShowDialog();
         }
         public override bool ContainsPoint(Point point)
         {
-            Debug.WriteLine(Location.X <= point.X && point.X <= Location.X + Width &&
-            Location.Y >= point.Y && point.Y <= Location.Y + Height);
+            //Debug.WriteLine(Location.X <= point.X && point.X <= Location.X + Width &&
+            //Location.Y >= point.Y && point.Y <= Location.Y + Height);
 
             return Location.X <= point.X && point.X <= Location.X + Width &&
             Location.Y <= point.Y && point.Y <= Location.Y + Height; // Location.Y >= point.Y
