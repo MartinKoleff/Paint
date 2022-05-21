@@ -38,6 +38,7 @@ namespace VectorGraphicEditor
             {
                 Square.Width = int.Parse(textBoxWidth.Text);
                 Square.Height = Square.Width;
+                Square.ColorFill = buttonColor.BackColor;
             }
             catch
             {

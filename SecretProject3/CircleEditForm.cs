@@ -36,8 +36,8 @@ namespace VectorGraphicEditor
         {
             try
             {
-                Circle.Radius = int.Parse(textBoxRadius.Text);
-                Circle.Color = buttonColor.BackColor; //TO TEST...
+                Circle.Radius = float.Parse(textBoxRadius.Text);
+                Circle.ColorFill = buttonColor.BackColor; //TO TEST...
 
             }
             catch
