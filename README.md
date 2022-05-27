@@ -1,5 +1,5 @@
 # Paint
-this is my Course Project - Paint in C# in collaboration with my colleague - Spas Milenkov!
+his is my Course Project - Paint in C# in collaboration with my colleague - Spas Milenkov!
 
 The project had to include:
 - Original idea!
