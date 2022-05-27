@@ -96,6 +96,7 @@ namespace VectorGraphicEditor
 
         private void pictureBoxLine_Click(object sender, EventArgs e)
         {
+            isEraser = false;
             isBrush = true;
             _selectedShape = null;
         }
@@ -216,7 +217,9 @@ namespace VectorGraphicEditor
                     _selectedShape.Location = _mouseDownLocation;
                 }catch (Exception ex)
                 {
-                    return;
+                    if (isEraser)
+                        return;
+                    isBrush = true;
                 }
             }
             Invalidate();
@@ -224,16 +227,19 @@ namespace VectorGraphicEditor
    
 
         /**Edit Shape*/
-        private void MainForm_MouseDoubleClick(object sender, MouseEventArgs e) //DOUBLE RIGHT CLICK
+        private void MainForm_MouseDoubleClick(object sender, MouseEventArgs e) 
         {
-            foreach (Shape s in _shapes)
+            if (e.Button == MouseButtons.Right)
             {
-                if (s.Selected)
+                foreach (Shape s in _shapes)
                 {
-                    s.OpenEditor();
-                    break;
+                    if (s.Selected)
+                    {
+                        s.OpenEditor();
+                        break;
+                    }
+                    Invalidate();
                 }
-                Invalidate();
             }
         }
         private void deleteSelectedShapesButton_Click(object sender, EventArgs e)
@@ -246,10 +252,7 @@ namespace VectorGraphicEditor
             {
                 _selectedShape = (Shape)Activator.CreateInstance(_selectedShape.GetType());
                 toDelete = true;
-            }catch(Exception ex)
-            {
-
-            }
+            }catch(Exception ex)  {}
             Invalidate();
         }
         /**Delete all shapes / Clear window*/
@@ -304,7 +307,7 @@ namespace VectorGraphicEditor
                 this.BackColor = dlg.Color;
             }
         }
-        //TO DO: Figure out wtf is this 
+
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             IFormatter formatter = new BinaryFormatter();
