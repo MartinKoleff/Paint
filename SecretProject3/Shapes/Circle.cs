@@ -16,7 +16,7 @@ namespace VectorGraphicEditor.Shapes
         public override void Paint(Graphics graphics)
         {
             this.ColorBorder = Selected ? Color.Red : Color.Black;
-            this.ColorFill = Color.Blue;
+            //this.ColorFill = Color.Blue;
 
             using (var brush = new SolidBrush(this.ColorFill))
                 graphics.FillEllipse(brush, _centerPoint.X, _centerPoint.Y, 2 * Radius, 2 * Radius);

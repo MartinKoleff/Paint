@@ -39,7 +39,7 @@ namespace VectorGraphicEditor
             {
                 Rectangle.Width = int.Parse(textBoxWidth.Text);
                 Rectangle.Height = int.Parse(textBoxHeight.Text);
-                Rectangle.Color = buttonColor.BackColor; //TO TEST...
+                Rectangle.ColorFill = buttonColor.BackColor; //TO TEST...
 
             }
             catch

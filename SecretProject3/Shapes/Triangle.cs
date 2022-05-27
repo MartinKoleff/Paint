@@ -53,7 +53,7 @@ namespace VectorGraphicEditor.Shapes
 
                 Points = new PointF[] { bottomLeftPoint, bottomRightPoint, topPoint };
             }
-            using (var brush = new SolidBrush(Color.Blue))
+            using (var brush = new SolidBrush(ColorFill))
             {
                 graphics.FillPolygon(brush, Points.ToArray());
                 graphics.DrawPolygon(this.Selected ? Pens.Red :Pens.Black, Points);

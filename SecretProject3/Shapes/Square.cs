@@ -23,9 +23,9 @@ namespace VectorGraphicEditor.Shapes
         public override void Paint(Graphics graphics)
         {
             var colorBorder = Selected ? Color.Red : Color.Black;
-            var colorFill = Color.Blue;
+            //var colorFill = Color.Blue;
 
-            using (var brush = new SolidBrush(colorFill)) //Color.Transparent
+            using (var brush = new SolidBrush(ColorFill)) //Color.Transparent
                 graphics.FillRectangle(brush, Location.X, Location.Y, Width, Height);
             using (var pen = new Pen(colorBorder))
                 graphics.DrawRectangle(pen, Location.X, Location.Y, Width, Height);
